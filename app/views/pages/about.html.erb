@@ -1,0 +1,43 @@
+<style>
+  #banner {
+    height:30%;
+    width:800px;
+    background-color: red;
+    border: 2px solid black;
+  }
+  .panel{
+    width:400px;
+    height:500px;
+    float: left;
+    border: 1px solid black;
+  }
+
+  #links_box{
+    list-style-type:none;
+  }
+  #links_box li{
+    margin: 5px;
+  }
+
+</style>
+
+<div id = "banner">
+  <h1> About Alpha Blog</h1>
+    <ul id="links_box">
+      <li>
+        <%=link_to "Home", root_path %>
+      </li>
+  </ul>
+</div>
+<div class = "panel">
+  Here are some features of Alpha Blog
+  <ul>
+    <li>Does nothing yet</li>
+    <li>Is a made-up blog</li>
+    <li>And more !</li>
+  </ul>
+</div>
+<div class = "panel">
+  Developed as an exercise in Ruby on Rails
+</div>
+
