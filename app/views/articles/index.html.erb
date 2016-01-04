@@ -1,0 +1,32 @@
+<h1> Article list </h1>
+
+<% if @articles.size == 0 %>
+  <p>There are no articles</p>
+
+<% else %>
+  <table>
+    <tr>
+      <th> Name </th>
+      <th> Description </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  <% @articles.each do |article| %>
+     <tr>
+       <td>
+         <%= article.title %>
+       </td>
+       <td>
+         <%= article.description %>
+       </td>
+       <td>
+         <%= link_to "View", article_path( article ) %>
+       </td>
+       <td>
+         <%= link_to "Edit", edit_article_path( article )%>
+       </td>
+     </tr>
+  <% end%>
+  </table>
+<% end %>
+<%= link_to "Create new article", new_article_path %>
