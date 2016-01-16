@@ -1,6 +1,5 @@
 <h1 class="centre">Create an article</h1>
 <% if @article.errors.any? %>
-  <h2> The following errors prevented creation of the article </h2>
-  <%= render "errors" %>
+ <%= render 'shared/errors', obj: @article %>
 <% end %>
 <%= render "form" %>
