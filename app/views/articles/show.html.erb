@@ -1,7 +1,22 @@
 <h2 align="center">
   <%= @article.title %>
 </h2>
+
 <div class="well col-xs-8 col-xs-offset-2">
+  <% if @article.user %>
+    <ul class="listing">
+      <li>
+        <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+      </li>
+      <li class ="article_title">
+        <%= link_to @article.user.username, user_path(@article.user) %>
+      </li>
+    </ul>
+  <% else %>
+    <div class="listing">
+      unknown author
+    </div>
+  <%end%>
   <h4 class="centre"><strong>Description:</strong> </h4>
   <hr>
   <%= simple_format(@article.description)%>
