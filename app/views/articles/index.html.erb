@@ -4,5 +4,8 @@
   <p>There are no articles</p>
 
 <% else %>
+<div align="center">
+  <%= will_paginate %>
+</div>
 <%= render "article", obj: @articles %>
 <% end %>
