@@ -1,0 +1,17 @@
+<h1 align="center"> <%= "Category: " + @category.name + " " %> Article list </h1>
+
+<% if @category_articles.size == 0 %>
+  <p>There are no articles</p>
+
+<% else %>
+
+<div align="center">
+  <%= will_paginate @category_articles %>
+</div>
+
+<%= render "articles/article", obj: @category_articles %>
+
+<div align="center">
+  <%= will_paginate @category_articles %>
+</div>
+<% end %>

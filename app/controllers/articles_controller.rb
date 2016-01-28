@@ -20,7 +20,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    debugger
     @article = Article.create(article_params)
     @article.user = current_user
     if @article.save
@@ -54,7 +53,7 @@ class ArticlesController < ApplicationController
   end
 
   private def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, category_ids:[])
   end
 
   private def find_article
